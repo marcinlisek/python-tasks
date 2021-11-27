@@ -1,18 +1,18 @@
 # FAQ
 
-*never use the global variables inside the method - all things passed to method should be passed as an arguments.
+* never use the global variables inside the method - all things passed to method should be passed as an arguments.
 
-*call the variables with full names instad of strange shortcuts (for example split_list instead of s_list)
+* call the variables with full names instad of strange shortcuts (for example split_list instead of s_list)
 
-*never call a method the same as a variable in this method.
+* never call a method the same as a variable in this method.
 
-*iterating through string we get single signs.
+* iterating through string we get single signs.
 
-*for example instead of list_of_text_files call a variable text_files.
+* for example instead of list_of_text_files call a variable text_files.
 
 * what to do, if we havea method with multiple inputs and we want to return multiplbe values (SPOJ examples). Can we somehow add new variables? It probably would have to return a list or something.
 
-*is it possible to have first filsted all the input data and then the output data?
+* is it possible to have first filsted all the input data and then the output data?
 
 
 
