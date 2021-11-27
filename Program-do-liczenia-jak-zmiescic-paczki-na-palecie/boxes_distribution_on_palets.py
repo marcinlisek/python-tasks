@@ -1,12 +1,7 @@
-def boxes_distribution():
+def boxes_distribution(pallet_width, pallet_length, box_width, box_lenght):
 
-    pallet_width = int(input("Wprowadz szerokosc palety: "))
-    pallet_lenght = int(input("Wprowadz dlugosc palety: "))
-    box_width = int(input("Wprowadz szerokosc gry: "))
-    box_lenght = int(input("Wprowadz dlugosc gry: "))
-
-    lenght_varian1 = pallet_lenght / box_lenght
-    lenght_varian2 = pallet_lenght / box_width
+    lenght_varian1 = pallet_length / box_lenght
+    lenght_varian2 = pallet_length / box_width
 
     width_variant1 = pallet_width / box_lenght
     width_variant2 = pallet_width / box_width
@@ -21,10 +16,20 @@ def boxes_distribution():
         return ("wszerz", total_varinat2)
 
 
-result = boxes_distribution()
+def main():
+    pallet_lenght = int(input("Wprowadz dlugosc palety w centymetrach: "))
+    pallet_width = int(input("Wprowadz szerokosc palety w centymetrach: "))
+
+    box_lenght = int(input("Wprowadz dlugosc gry w centymetrach: "))
+    box_width = int(input("Wprowadz szerokosc gry w centymetrach: "))
+
+    return boxes_distribution(pallet_width, pallet_lenght, box_width, box_lenght)
+
+
+result = main()
 
 if result[0] == "wzdluz":
-    print(f"Gry nalezy ulozyc po dlugosci na palecie po dlugosci. Gier na palecie zmiesci sie {result[1]}.")
+    print(f"Gry nalezy ulozyc po dlugosci na palecie po dlugosci. Gier na powierzchni palecie zmiesci sie {result[1]}.")
 
 else:
     print(f"Gry nalezy ulozyc po szerokosci na palecie po dlugosci. Gier na palecie zmiesci sie {result[1]}.")
