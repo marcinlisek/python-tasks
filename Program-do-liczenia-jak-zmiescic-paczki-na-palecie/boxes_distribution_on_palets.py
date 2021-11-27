@@ -17,13 +17,13 @@ def boxes_distribution(pallet_width, pallet_length, box_width, box_lenght):
 
 
 def main():
-    pallet_lenght = int(input("Wprowadz dlugosc palety w centymetrach: "))
+    pallet_length = int(input("Wprowadz dlugosc palety w centymetrach: "))
     pallet_width = int(input("Wprowadz szerokosc palety w centymetrach: "))
 
-    box_lenght = int(input("Wprowadz dlugosc gry w centymetrach: "))
+    box_length = int(input("Wprowadz dlugosc gry w centymetrach: "))
     box_width = int(input("Wprowadz szerokosc gry w centymetrach: "))
 
-    return boxes_distribution(pallet_width, pallet_lenght, box_width, box_lenght)
+    return boxes_distribution(pallet_width, pallet_length, box_width, box_length)
 
 
 result = main()
