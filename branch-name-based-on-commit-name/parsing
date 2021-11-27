@@ -1,9 +1,3 @@
-#"feat: #OLDM-324 SKLF SKdlfja asldfk" -> feat/OLDM-324/sklf-skdlfja-asldfk
-
-#"fix: #WW-11 improve error handling" -> "fix/WW-11/improve-error-handling"
-
-
-
 def parsing(commit):
 
     step1 = commit.replace(": #", "/")
