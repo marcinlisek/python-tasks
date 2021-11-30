@@ -21,4 +21,4 @@
 
 ![obraz](https://user-images.githubusercontent.com/94200668/143718471-5e9bc86c-11cb-40f0-8a9a-cca7dfc3cdf8.png)
 
-* to run debuf in pycharm, we ad a red dot marker next to line counter number and run debug
+* to run debug in pycharm, we ad a red dot marker next to line counter number and run debug
