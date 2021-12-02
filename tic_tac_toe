@@ -1,1 +1,151 @@
+def display_board(board):
 
+    #print(" " * 20 + "Numbers corresponding to positions on the board\n")
+    print("")
+    print(' ' + board[7] + ' | ' + board[8] + ' | ' + board[9] + ' ' * 10 + "7" + ' | ' + "8" + ' | ' + "9")
+    print('-----------' + ' ' * 8 + '-----------')
+    print(' ' + board[4] + ' | ' + board[5] + ' | ' + board[6] + ' ' * 10 + "4" + ' | ' + "5" + ' | ' + "6")
+    print('-----------' + ' ' * 8 + '-----------')
+    print(' ' + board[1] + ' | ' + board[2] + ' | ' + board[3] + ' ' * 10 + "1" + ' | ' + "2" + ' | ' + "3")
+    print("")
+
+
+def gameon_check():
+    choice = ""
+
+    while choice not in ["y", "n"]:
+        choice = input("Do you want to play next round? - ")
+
+    if choice == "y":
+        return True
+    else:
+        return False
+
+
+def marker_position(board):
+    position = 0
+
+    while position not in range(1, 10) or board[position] != " ":
+        position = int(input("Place marker on desired position entering the number from right side board: "))
+
+    return position
+
+
+def place_marker(board, position, marker):
+    board[position] = marker
+
+
+def win_check(board, marker):
+
+    return ((board[7] == marker and board[8] == marker and board[9] == marker) or
+            (board[4] == marker and board[5] == marker and board[6] == marker) or
+            (board[1] == marker and board[2] == marker and board[3] == marker) or
+            (board[7] == marker and board[4] == marker and board[1] == marker) or
+            (board[8] == marker and board[5] == marker and board[2] == marker) or
+            (board[9] == marker and board[6] == marker and board[3] == marker) or
+            (board[7] == marker and board[5] == marker and board[3] == marker) or
+            (board[9] == marker and board[5] == marker and board[1] == marker))
+
+
+def draw_check(board):
+    if " " not in board:
+        return True
+    else:
+        return False
+
+
+def choose_first(P1, P2):
+    import random
+
+    if random.randint(0, 1) == 0:
+        return P1
+
+    else:
+        return P2
+
+def assign_marker():
+
+    marker = ""
+
+    while marker not in ["X", "O"]:
+        marker = input(turn+" choose your marker X or O: ").upper()
+        print("")
+
+    if marker == "X":
+        return "X", "O"
+    else:
+        return "O", "X"
+
+
+board = ["#", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+P1 = input("Enter first player name: ")
+
+P2 = input("Enter second player name: ")
+
+turn = choose_first(P1, P2)
+
+if turn == P1:
+    print("\n" + P1 + " starts!\n")
+    P1_marker, P2_marker = assign_marker()
+
+else:
+    print("\n" + P2 + " starts!\n")
+    P2_marker, P1_marker = assign_marker()
+
+gameon = True
+
+while gameon:
+
+    if turn == P1:
+
+        marker = P1_marker
+
+        display_board(board)
+
+        print(P1)
+
+        position = marker_position(board)
+
+        place_marker(board, position, marker)
+
+        if win_check(board, marker):
+            display_board(board)
+            print(P1+" has won!")
+            gameon = False
+            break
+
+        if draw_check(board):
+            display_board(board)
+            print("Draw!")
+            gameon = False
+            break
+
+        turn = P2
+
+    if turn == P2:
+
+        marker = P2_marker
+
+        display_board(board)
+
+        print(P2)
+
+        position = marker_position(board)
+
+        place_marker(board, position, marker)
+
+        if win_check(board, marker):
+            display_board(board)
+            print(P2+ " has won!")
+            gameon = False
+            break
+
+        if draw_check(board):
+            display_board(board)
+            print("Draw!")
+            gameon = False
+            break
+
+        turn = P1
+        
